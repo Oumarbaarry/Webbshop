@@ -23,25 +23,25 @@ const form = document.querySelector("#order-form");
     
   }
 
-  // Kontrollera att telefonnumret innehåller siffror, bindestreck och parenteser och max 50 tecken
+  
   if (!/^[\d\s()+-]{1,50}$/.test(phone.value)) {
     return alert('Telefonnummer får bara innehålla siffror, bindestreck och parenteser. Max 50 tecken.');
    
   }
 
-  // Kontrollera att gatuadressen är minst 4 tecken och max 50 tecken
+  
   if (adress.value.length < 4 || adress.value.length > 50) {
    return alert('Gatuadressen måste vara minst 4 tecken och max 50 tecken.');
   
   }
 
-  // Kontrollera att postnumret har exakt 6 tecken i formatet 000 00
+  
   if (!/^\d{3}\s\d{2}$/.test(postal_code.value)) {
     return alert('Postnumret måste ha exakt 6 tecken i formatet 000 00.');
     
   }
 
-  // Kontrollera att orten är minst 2 tecken och max 50 tecken
+ 
   if (city.value.length < 2 || city.value.length > 50) {
     return alert('Orten måste vara minst 2 tecken och max 50 tecken.');
    
@@ -55,6 +55,6 @@ const form = document.querySelector("#order-form");
         localStorage.setItem("Phone", phone.value);
         localStorage.setItem("Postal Code", postal_code.value);
         localStorage.setItem("City", city.value);
-        // Redirect the user to the confirmation page
+        
         window.location.href = `confirmation.html?id=${id}`;
       });
